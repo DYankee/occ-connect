@@ -1,0 +1,127 @@
+:root {
+    --light-text: #D1D4D6;
+    --dark-text: #879AA7;
+    --light-background-1: #D1D4D6;
+    --dark-background-1: #879AA7;
+    --accent-1: #003151;
+    --accent-2: #007CC6;
+    --accent-3: #74D1F8;
+}
+
+body{
+    margin: 0%;
+    background-color: var(--dark-background-1);
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+header{
+    padding: 0%;
+    background-color: var(--accent-1);
+}
+
+#profile_pic{
+    border: 1px solid var(--accent-1);
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+}
+
+#logo{
+    width: 10rem;
+    margin-left: auto;
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar-links{
+    display: flex;
+    flex-direction: row;
+    padding: 0%;
+}
+
+.navbar-links li{
+    list-style-type: none;
+    padding: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.navbar-links a{
+    color: var(--light-text);
+    font-size: 2em;
+}
+
+#forum-control{
+    padding: 1em;
+    background-color: var(--accent-3);
+}
+
+form{
+    font-size: 1.25em;
+}
+
+textarea{
+    font-size: 1.25em;
+}
+
+input{
+    font-size: 1.25em;
+}
+
+button{
+    font-size: 1.25em;
+}
+
+select{
+    font-size: 1.25em;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 4px solid var(--accent-1);
+}
+
+.user-info{
+    width: 10vw;
+    font-size: 1.5em;
+    border: 2px solid var(--accent-1);
+}
+
+td a{
+    font-size: 2em;
+    color: #003151;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.center{
+    align-items: center;
+}
+
+.title{
+    padding-left: 1rem;
+}
+
+.content h3{
+    font-size: 2em;
+    margin-top: auto;
+}
+
+.content p{
+    font-size: 1.5em;
+}
+
+table p{
+    font-size: 1.5em;
+    padding-left: 1rem;
+}
+
