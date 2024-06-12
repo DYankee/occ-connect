@@ -3,8 +3,11 @@ services:
   webserver:
     image: php:7.2-apache
     command: 'docker-php-ext-install mysqli'
+    command: ["apache2ctl", "-D", "FOREGROUND"]
     ports: 
       - '8069:80'
+    expose:
+      - '80'
     networks:
       - 'net1'
     depends_on:
@@ -26,7 +29,7 @@ services:
     expose: 
       - '3306'
     volumes:
-      - my-db:/var/lib/mysql
+      - 'my-db:/var/lib/mysql'
 
 networks:
   net1: {}
