@@ -1,0 +1,32 @@
+version: "2"
+services:
+  webserver:
+    image: php:7.2-apache
+    command: 'docker-php-ext-install mysqli'
+    ports: 
+      - '8069:80'
+    networks:
+      - 'net1'
+    depends_on:
+      - db
+    volumes:
+      - "./:/var/www/html"
+      - "/home/some_user/web/apache2_faildumps.conf:/etc/apache2/conf-enabled/apache2_faildumps.conf"
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: '1019'
+      MYSQL_ROOT_PASSWORD: 'csc255'
+    ports:
+      - '3306:3306'
+    networks:
+      - 'net1'
+    expose: 
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+networks:
+  net1: {}
