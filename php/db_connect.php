@@ -2,8 +2,8 @@
 
 //Set database connection information
 define('DB_HOST', 'localhost'); //Or could be a different server
-define('DB_USER', 'zgeary'); //MySQL credentials
-define('DB_PASSWORD', '23196Z'); //MySQL credentials 
+define('DB_USER', 'user'); //MySQL credentials
+define('DB_PASSWORD', '1019'); //MySQL credentials 
 define('DB_NAME', 'geary'); //Specific database
 
 //Database connection
