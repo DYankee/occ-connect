@@ -1,13 +1,14 @@
 <?php
 
 //Set database connection information
-define('DB_HOST', '127.0.0.1:3306'); //Or could be a different server
+define('DB_HOST', '127.0.0.1'); //Or could be a different server
 define('DB_USER', 'user'); //MySQL credentials
 define('DB_PASSWORD', '1019'); //MySQL credentials 
 define('DB_NAME', 'geary'); //Specific database
+define('DB_PORT', '3306')
 
 //Database connection
-$dbc = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
+$dbc = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT)
        OR die('Connection error');
 
 //Set the encoding
