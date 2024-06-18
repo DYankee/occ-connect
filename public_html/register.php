@@ -142,7 +142,7 @@ function checkPasswd()
           <label for="email">Email:</label>
         </td>
         <td class="left">
-          <input type="text" name="email" id="email" value="" size="30" maxlength="40" pattern=".{3,15}" required>
+          <input type="text" name="email" id="email" value="" size="30" maxlength="40" required>
         </td>
       </tr>
      
