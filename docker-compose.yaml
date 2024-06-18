@@ -10,7 +10,7 @@ services:
       - frontend
       - backend
     ports:
-      - "80:80"
+      - "${PORT}:80"
     volumes:
       - ${PROJECT_ROOT}/:/var/www/html/
     container_name: apache
