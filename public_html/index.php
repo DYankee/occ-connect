@@ -1,14 +1,28 @@
-<h1>Hello Cloudreach!</h1>
-<h4>Attempting MySQL connection from php...</h4>
 <?php
-$host = 'mysql';
-$user = 'root';
-$pass = '1019';
-$conn = new mysqli($host, $user, $pass);
+    require('php/db_connect.php');
+    require('php/logincheck.php');
+    require('php/load-session-data.php');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCConnect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <?php require('components/navbar.php');?>
+    <div id="forum-view-controls">
+        <?php require('components/forms/forum-view-control.php')?>
+    </div>
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} else {
-  echo "Connected to MySQL successfully!";
-}
+    <div id="forum-view">
+        <?php require('components/views/forum-view.php')?>
+    </div>
+
+</body>
+</html>
+<?php 
+    mysqli_close($dbc);
 ?>
