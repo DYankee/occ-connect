@@ -20,7 +20,7 @@
             $q = "UPDATE users SET last_login=NOW() WHERE user_name='$uid'";
             $r = @mysqli_query($dbc, $q);
             //redirect
-            redirect_user('main.php');
+            redirect_user('index.php');
         }
         else{
             //Assign $data to $errors for login_page.php:
