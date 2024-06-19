@@ -1,7 +1,7 @@
 <header>
 	<nav class="navbar">
 		<ul role="list" class="navbar-links">
-			<li><a href="main.php">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li><a href="new-thread.php">New Thread</a></li>
 			<li><a href="update-profile.php">Update Profile</a></li>
 			<li><?php include('components/logout.php')?></li>
