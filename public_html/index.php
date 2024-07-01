@@ -20,7 +20,6 @@
     <div id="forum-view">
         <?php require('components/views/forum-view.php')?>
     </div>
-
 </body>
 </html>
 <?php 

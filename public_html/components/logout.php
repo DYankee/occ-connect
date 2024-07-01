@@ -4,11 +4,12 @@
         $_SESSION = [];
 
         //Destroy the session itself
+        session_start();
         session_destroy();
 
         //Destroy the session cookie on the client
         setcookie('PHPSESSID', '', time() - 3600, '/', '', 0, 0);
-        header("Location: ../main.php");
+        header("Location: ../index.php");
         exit();
     }
 ?>

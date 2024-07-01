@@ -13,8 +13,7 @@ if (isset($_FILES['image']))
     {
         // Move the file over.
         $filename = "../data/img/profile-pictures/" . $_SESSION['user_name'] . "_profile-pic.png";
-        $filename2 = "data/profile-pictures/" . $_SESSION['user_name'] . "_profile-pic.png";
-        echo $filename;
+        $filename2 = "data/img/profile-pictures/" . $_SESSION['user_name'] . "_profile-pic.png";
         if (move_uploaded_file($_FILES['image']['tmp_name'], $filename))
         {
             //Save image filename in session data:
