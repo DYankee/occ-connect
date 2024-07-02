@@ -6,6 +6,12 @@
         "markdown",
         "latex",
         "plaintext",
-        "php"
-    ]
+        "php",
+        "properties"
+    ],
+    "spellright.parserByClass": {
+        "properties": {
+            "parser": "code"
+        }
+    }
 }

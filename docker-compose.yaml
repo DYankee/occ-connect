@@ -1,37 +1,58 @@
+version: "3.5"
+
 services:
   apache-php:
-    build:
-      context: './php'
-      args:
-        APACHE_VERSION: ${PHP_VERSION}
+    image: php:8.2-apache
+    deploy:
+      placement:
+        constraints:
+          - "node.role == manager"
+      replicas: 1
     depends_on:
       - mysql
     networks:
-      - frontend
       - backend
-    ports:
-      - "${PORT}:80"
+      - host
+    expose:
+      - "8089:80"
     volumes:
       - ${PROJECT_ROOT}/:/var/www/html/
-    container_name: apache
-    user: "${UID}:${GID}"
   mysql:
-    image: mysql:${MYSQL_VERSION:-latest}
-    restart: always
+    image: mysql
+    secrets:
+      - db_root_password
+      - db_dba_password
+    deploy:
+      replicas: 1
     ports:
-      - "3306:3306"
-    volumes:
-            - data:/var/lib/mysql
+      - 3306:3306
+    environment:
+      MYSQL_USER: dba
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: /run/secrets/db_root_password
+      MYSQL_PASSWORD: /run/secrets/db_dba_password
     networks:
       - backend
-    environment:
-      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
-      MYSQL_DATABASE: "${DB_NAME}"
-      MYSQL_USER: "${DB_USERNAME}"
-      MYSQL_PASSWORD: "${DB_PASSWORD}"
-    container_name: mysql
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - type: bind
+        source: /opt/docker/volumes/mysql
+        target: /var/lib/mysql
+
+secrets:
+  db_root_password:
+    external: true
+  db_dba_password:
+    external: true
+
 networks:
-  frontend:
   backend:
+  host:
+    name: host
+    external: true
+
+    
+    
+    
 volumes:
     data:
