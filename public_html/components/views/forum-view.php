@@ -11,7 +11,7 @@
         $resCount = $_COOKIE['default_view_amt'];
     }
     else{
-        $forumid = 2;
+        $forumid = 4;
         $resCount = 10;
     }
 
