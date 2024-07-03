@@ -1,4 +1,4 @@
-<form id="forum-control" action="main.php" method="get">
+<form id="forum-control" action="index.php" method="get">
     <label for="forum_id">Select a forum to view: </label>
     <select class="font-fix" name="forum_id" id="forum_id">
         <?php
