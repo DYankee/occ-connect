@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
     //Close the database connection:
     mysqli_close($dbc);
-    redirect_user("main.php");
+    redirect_user("index.php");
 }
 ?>
 
