@@ -15,9 +15,10 @@ services:
       - ${PROJECT_ROOT}/:/var/www/html/
     env_file: .env
     container_name: apache
+    restart: unless-stopped
   mysql:
     image: mysql
-    restart: always
+    restart: unless-stopped
     ports:
       - "3306:3306"
     volumes:
