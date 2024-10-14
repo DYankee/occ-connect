@@ -1,8 +1,6 @@
 <?php
     require('php/db_connect.php');
-    require('php/logincheck.php');
     require('php/load-session-data.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<?php require('components/navbar.php');?>
+<?php require('components/navbar.php')?>
 
 <?php require('components/views/thread-view.php')?>
 <br>

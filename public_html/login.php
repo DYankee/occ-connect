@@ -65,11 +65,11 @@
     <form action="login.php" method="post">
         <p>
             <label for="user_name">Username:</label>
-            <input type="text" name="user_name" id="user_name" size="15" maxlength="15" autofocus>
+            <input type="text" name="user_name" id="user_name" size="20" maxlength="20" autofocus>
         </p>
         <p>
             <label for="passwd">Password:</label>
-            <input type="password" name="passwd" id="passwd" size="32" maxlength="32">
+            <input type="password" name="passwd" id="passwd" size="20" maxlength="20">
         </p>
         <p>
             <input type="submit" name="submit" value="Login">

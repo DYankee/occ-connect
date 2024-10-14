@@ -11,8 +11,7 @@
         setcookie('PHPSESSID', '', time() - 3600, '/', '', 0, 0);
         header("Location: ../index.php");
         exit();
-    }
-?>
+    }; ?>
 
 <form action="components/logout.php" method="post">
     <button type="submit">Logout</button>

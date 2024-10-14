@@ -36,12 +36,21 @@ header{
 
 .navbar{
     display: flex;
+    padding: 0%;
+    margin: 0%;
+}
+
+.login{
+    display: flex;
+    flex-direction: row;
 }
 
 .navbar-links{
     display: flex;
     flex-direction: row;
-    padding: 0%;
+    padding: 0px;
+    align-items: center;
+    color: var(--light-text);
 }
 
 .navbar-links li{
@@ -51,9 +60,10 @@ header{
     padding-bottom: 2em;
 }
 
-.navbar-links a{
+.navbar-links li a{
     color: var(--light-text);
     font-size: 2em;
+    align-items: center;
 }
 
 #forum-control{
