@@ -65,7 +65,7 @@ function check_login($dbc, $uid = '', $passwd = '')
     {
         //Retrieve the username, first name, and date of last login for that username/password combination:
         $q = "SELECT user_name, first_name, profile_pic, DAYNAME(last_login) AS dayName, MONTHNAME(last_login) AS month, 
-            DAY(last_login) AS day, YEAR(last_login) AS year FROM users 
+            DAY(last_login) AS day, YEAR(last_login) AS year, user_id FROM users 
             WHERE user_name='$username' AND user_Passwd=SHA1('$p')";
         $r = @mysqli_query($dbc, $q); //Run the query.
         //Check the result:

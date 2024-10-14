@@ -14,6 +14,7 @@
             $_SESSION['first_name'] = $data['first_name'];
             $_SESSION['last_login'] = $data['dayName'] . ", " . $data['month'] . " " . $data['day'] . ", " . $data['year'];
             $_SESSION['profile_pic'] = $data['profile_pic'];
+            $_SESSION['user_id'] = $data['user_id'];
             
             //Update login information.
             $uid = $_SESSION['user_name'];

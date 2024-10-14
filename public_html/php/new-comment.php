@@ -9,12 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $debug = false;
     
     $thread_id = $_GET['thread_id'];
-    $uname = mysqli_real_escape_string($dbc, trim($_SESSION['user_name']));
     $cbody = mysqli_real_escape_string($dbc, trim($_POST['body']));
+    $uid = mysqli_real_escape_string($dbc, trim($_SESSION['user_id']));
 
 
         //Add the new thread to the database:
-        $q = "INSERT INTO comments (thread_id, user_name, body, post_date) VALUES ($thread_id, '$uname', '$cbody', NOW())";
+        $q = "INSERT INTO comments (thread_id, body, post_date, user_id) 
+            VALUES ($thread_id, '$cbody', NOW(), $uid)";
         $r = @mysqli_query($dbc, $q);
 
         if($debug){
